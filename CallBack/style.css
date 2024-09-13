@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff7f50, #6a5acd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    animation: moveText 3s infinite;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 8s ease-in-out infinite alternate;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#countdown .timer {
+    margin: 10px;
+    padding: 20px;
+    font-size: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* smooth scaling effect */
+}
+
+#countdown .timer.animate {
+    transform: scale(1.2); /* slightly enlarge on each tick */
+}
+
+#timer .countdown-wrapper #countdown #sec {
+    box-shadow: 0 0 0 5px rgba(2, 117, 216, 0.5);
+}
+
+#timer .countdown-wrapper #countdown #sec:hover {
+    box-shadow: 0 0 0 5px rgba(2, 117, 216, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #countdown .timer {
+        font-size: 60px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #countdown .timer {
+        font-size: 40px;
+        padding: 10px;
+    }
+}
